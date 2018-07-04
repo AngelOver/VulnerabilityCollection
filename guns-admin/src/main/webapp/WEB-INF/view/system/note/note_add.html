@@ -1,0 +1,35 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="id" underline="true"/>
+                            <#input id="name" name="名字" underline="true"/>
+                            <#input id="age" name="年纪"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="remark" name="备注" underline="true"/>
+                            <#input id="time" name="时间" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="NoteInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="NoteInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    laydate.render({
+        elem: '#time'
+    });
+</script>
+<script src="${ctxPath}/static/modular/system/note/note_info.js"></script>
+@}
